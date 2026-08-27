@@ -1,0 +1,308 @@
+body {
+    font-family: 'Dancing Script', cursive !important;
+    color: #0b1536;
+    text-align: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-color: #fce4ec;
+}
+
+h2 {
+    font-size: 60px;
+    font-family: 'Dancing Script', cursive !important;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff4d6d, #C71585, #ff758c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 4px 6px rgba(199, 21, 133, 0.25));
+    transition: transform 0.3s ease;
+    cursor: default;
+    margin: 10px 0;
+}
+
+h2:hover {
+    transform: scale(1.05) rotate(-1deg);
+}
+
+.nut-trai-tim-doc {
+    width: 100px;
+    height: 100px;
+    border: none;
+    cursor: pointer;
+    background: radial-gradient(circle, #C71585 20%, #FF69B4 60%, #FADADD 90%);
+    -webkit-mask-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z'/%3E%3C/svg%3E");
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    transition: transform 0.3s ease;
+}
+
+.nut-trai-tim-doc:hover {
+    transform: scale(1.15) translateY(-5px);
+}
+
+.login {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 100;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login.moved-up {
+    top: 20px !important;
+    transform: translate(-50%, 0) !important;
+    margin-bottom: 25px;
+}
+
+#content {
+    position: fixed;
+    left: 50%;
+    top: 230px;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 900px;
+    max-height: calc(80vh - 200px);
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0.2s;
+}
+
+#content:not(:empty) {
+    opacity: 1;
+}
+
+.item {
+    background-color: transparent;
+    padding: 5px;
+    text-align: center;
+}
+
+/* KHUNG NÚT DẠNG ĐÁM MÂY BỒNG BỀNH & CUTE */
+.item button {
+    position: relative;
+    background: #ffffff;
+    color: #0b1536;
+    border: 2px solid #ffb3c1;
+    border-radius: 50px 30px 50px 30px;
+    padding: 16px 28px 16px 32px;
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 21px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255, 182, 193, 0.4);
+    transition: all 0.35s ease;
+    min-width: 190px;
+}
+
+.item button:hover {
+    transform: translateY(-5px) scale(1.05);
+    background-color: #fff0f3;
+    border-color: #ff4d6d;
+    box-shadow: 0 12px 25px rgba(255, 105, 180, 0.3);
+}
+
+/* HUY HIỆU THÁNG Ở GÓC TRÁI */
+.badge-month {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 35px;
+    height: 35px;
+    background: radial-gradient(circle, #ff758c 0%, #ff4d6d 100%);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    border: 2px solid #ffffff;
+    transform: rotate(-10deg);
+    transition: transform 0.3s ease;
+}
+
+.item button:hover .badge-month {
+    transform: rotate(0deg) scale(1.1);
+}
+
+/* MODAL POPUP DẠNG QUYỂN LỊCH */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.calendar-card {
+    background: #ffffff;
+    width: 85%;
+    max-width: 380px;
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(199, 21, 133, 0.2);
+    border: 2px solid #ffccd5;
+    text-align: center;
+    position: relative;
+    transform: scale(0.8);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-overlay.show .calendar-card {
+    transform: scale(1);
+}
+
+.calendar-header {
+    font-size: 26px;
+    color: #C71585;
+    margin-bottom: 15px;
+    font-weight: bold;
+    border-bottom: 2px dashed #ffccd5;
+    padding-bottom: 10px;
+}
+
+.calendar-body {
+    font-size: 22px;
+    color: #0b1536;
+    line-height: 1.6;
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #ff4d6d;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
+}
+
+#showAll {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+}
+
+#showAll.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* HIỆU ỨNG TUYẾT RƠI */
+.snowflake {
+    position: fixed;
+    top: -10px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(50vh) translateX(20px);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(105vh) translateX(-20px);
+        opacity: 0.2;
+    }
+}
+
+.love-letter-icon {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+    border: 2px solid #ffccd5;
+    cursor: pointer;
+    z-index: 999;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hiệu ứng khi rê chuột vào */
+.love-letter-icon:hover {
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 10px 25px rgba(255, 77, 109, 0.5);
+}
+
+/* Định nghĩa chuyển động Rung lắc (Shake) */
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(-15deg);
+    }
+
+    40% {
+        transform: rotate(15deg);
+    }
+
+    60% {
+        transform: rotate(-10deg);
+    }
+
+    80% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Class kích hoạt hiệu ứng rung */
+.love-letter-icon.shaking {
+    animation: shake 0.6s ease-in-out;
+}

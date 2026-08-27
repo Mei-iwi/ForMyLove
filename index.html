@@ -5,10 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoginPage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
+    <div id="loveLetterBtn" class="love-letter-icon" title="Nhấn vào để đọc thư">
+        💌
+    </div>
+    <div class="login">
+        <h2>WISH YOU ALL THE BEST</h2>
+        <span id="title"></span>
+        <br>
+        <button class="nut-trai-tim-doc" id="showAll">Show All</button>
+    </div>
 
+    <div id="content"></div>
+    <div id="calendarModal" class="modal-overlay">
+        <div class="calendar-card">
+            <button id="closeModal" class="close-btn">&times;</button>
+            <div class="calendar-header">📅 Nhật Ký Yêu Thương</div>
+            <div id="modalBody" class="calendar-body">
+                <!-- Nội dung ngày tháng và sự kiện sẽ được điền tự động vào đây -->
+            </div>
+        </div>
+    </div>
+    <script type="module" src="getInfo.js"></script>
 </body>
 
 </html>
