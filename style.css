@@ -26,7 +26,7 @@ h2:hover {
 }
 
 /* Tự động thu nhỏ tiêu đề khi xem trên điện thoại (màn hình nhỏ hơn hoặc bằng 768px) */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     h2 {
         font-size: 38px;
         /* Thu nhỏ cỡ chữ lại cho vừa vặn màn hình điện thoại */
