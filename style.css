@@ -9,28 +9,29 @@ body {
 }
 
 h2 {
+    font-size: 60px;
+    font-family: 'Dancing Script', cursive !important;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff4d6d, #C71585, #ff758c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 4px 6px rgba(199, 21, 133, 0.25));
+    transition: transform 0.3s ease;
+    cursor: default;
+    margin: 10px 0;
+}
+
+h2:hover {
+    transform: scale(1.05) rotate(-1deg);
+}
+
+/* Tự động thu nhỏ tiêu đề khi xem trên điện thoại (màn hình nhỏ hơn hoặc bằng 768px) */
+@media (max-width: 768px) {
     h2 {
-        font-size: 60px;
-        font-family: 'Dancing Script', cursive !important;
-        font-weight: bold;
-        background: linear-gradient(45deg, #ff4d6d, #C71585, #ff758c);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        filter: drop-shadow(2px 4px 6px rgba(199, 21, 133, 0.25));
-        transition: transform 0.3s ease;
-        cursor: default;
-        margin: 10px 0;
-    }
-
-    h2:hover {
-        transform: scale(1.05) rotate(-1deg);
-    }
-
-    @media (max-width: 768px) {
-        h2 {
-            font-size: 38px;
-            padding: 0 15px;
-        }
+        font-size: 38px;
+        /* Thu nhỏ cỡ chữ lại cho vừa vặn màn hình điện thoại */
+        padding: 0 15px;
+        /* Tránh chữ bị sát mép màn hình quá mức */
     }
 }
 
